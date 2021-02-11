@@ -37,6 +37,7 @@ CREATE TABLE WellsSimpleIndexW
 	Geometry_ID int,
 	FOREIGN KEY (Geometry_ID) REFERENCES WellClass_Simple(Geometry_ID),
 	OP_ID int,
+	FOREIGN KEY (OP_ID) REFERENCES WellOperator_Simple(OP_ID),
 	ST_ID int,
 	FOREIGN KEY (ST_ID) REFERENCES WellStatus_Simple(ST_ID),
 	FM_ID int
@@ -49,7 +50,7 @@ SELECT * FROM WellsSimpleIndexW
 CREATE TABLE WellOperator_Simple
 (
 	OPERATOR varchar(50) UNIQUE,
-	OP_ID int
+	OP_ID int UNIQUE
 );
 
 -- Initial query of WellOperator_Simple table
